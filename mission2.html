@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <h1 id="titre"></h1>
+    <button id="button1">Test</button>
+    <button id="button2">Test</button>
+    <button id="button3">Test</button>
+
+    <script>
+        var perdu=0;
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        async function newText(textContent) {
+            var text = document.getElementById("titre");
+            for (let i = 0; i < textContent.length; i++) {
+                await sleep(25);
+                text.innerHTML += textContent[i];
+            }
+        }
+        async function newText(textContent,id) {
+                var text = document.getElementById(id);
+                for (let i = 0; i < textContent.length; i++) {
+                    await sleep(25);
+                    text.innerHTML += textContent[i];
+                }
+            }
+        newText("Trouves les bons carrés","h2");
+        async function Start(button) {
+            button.style.background = "rgb(100,100,100)";
+            await sleep(500);
+            button.style.background = "white";
+        }
+        async function Main() {
+            await sleep(1000);
+            Start(document.getElementById("button1"));
+            await sleep(500);
+            Start(document.getElementById("button3"));
+            await sleep(500);
+            Start(document.getElementById("button2"));
+            await sleep(500);
+        }
+        Main();
+        let ht = [0, 0, 0];
+        let compteur = 0;
+        
+        button1.click= function () {
+            alert('sdhnk');
+
+            ht[compteur] = 1;
+            compteur++;
+
+        };
+        button2.click= function () {
+
+            ht[compteur] = 2;
+            compteur++;
+        };
+        button3.click= function () {
+            ht[compteur] = 3;
+            compteur++;
+        };
+
+        if (compteur == 2) {
+            if (ht == [1, 3, 2]) {
+                alert('vous avez réussi l étape 1');
+                
+            }
+            else {
+                alert('vous avez perdu');
+                
+            }
+
+
+        }
+
+
+
+
+
+
+    </script>
+    
+    <style>
+        button {
+            background: white;
+        }
+    </style>
+</body>
+
+</html>

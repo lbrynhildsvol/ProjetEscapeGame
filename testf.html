@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titre"></h1>
+    <h2 id="h2"></h2>
+    <h2 id="h22"></h2>
+    <h2 id="h222"></h2>
+    <h2 id="h2222"></h2>
+    <button id="button1">button1</button>
+    <button id="button2">Boutton2</button>
+    <button id="button3">Boutton3</button>
+<script>
+    var perdu=0;
+    var niveau2=0;
+    var niveau3=0;
+    var listf=[1,3,2];
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function newText(textContent,id) {
+                var text = document.getElementById(id);
+                for (let i = 0; i < textContent.length; i++) {
+                    await sleep(25);
+                    text.innerHTML += textContent[i];
+                }
+            }
+
+newText("Trouves les bons carrés","titre");
+async function Start(button) {
+    button.style.background = "rgb(100,100,100)";
+    await sleep(500);
+    button.style.background = "white";
+}
+async function Main() {
+            await sleep(1000);
+            Start(document.getElementById("button1"));
+            await sleep(500);
+            Start(document.getElementById("button3"));
+            await sleep(500);
+            Start(document.getElementById("button2"));
+            await sleep(500);
+        }
+        async function Main2() {
+            await sleep(1000);
+            Start(document.getElementById("button3"));
+            await sleep(500);
+            Start(document.getElementById("button5"));
+            await sleep(500);
+            Start(document.getElementById("button1"));
+            await sleep(500);
+            Start(document.getElementById("button4"));
+            await sleep(500);
+            Start(document.getElementById("button2"));
+            await sleep(500);
+        }
+        async function Main3() {
+            await sleep(1000);
+            Start(document.getElementById("button3"));
+            await sleep(500);
+            Start(document.getElementById("button5"));
+            await sleep(500);
+            Start(document.getElementById("button5"));
+            await sleep(500);
+            Start(document.getElementById("button2"));
+            await sleep(500);
+            Start(document.getElementById("button7"));
+            await sleep(500);
+            Start(document.getElementById("button6"));
+            await sleep(500);
+            Start(document.getElementById("button1"));
+            await sleep(500);
+            
+        }
+        Main();
+var list=[0,0,0];
+var compteur=0;
+var h=0;
+button1.onclick=function() {
+    list[compteur]=1;
+    newText(list,"h2")
+    compteur=compteur+1;
+    console.log(compteur)
+    console.log(list)
+    
+}
+button2.onclick=function() {
+    list[compteur]=2;
+    newText(list,"h2")
+    compteur=compteur+1;
+    console.log(compteur)
+    console.log(list)
+    if (compteur==3) {
+    if (list==listf) {
+        alert('gagné')
+        niveau2=1
+        var s= document.createElement('button');
+            s.id='étapesuivante';
+            var texte=document.createTextNode('étapesuivante');
+            s.appendChild(texte);
+            document.body.appendChild(s);
+    }
+    else if(list!=[1,3,2]) {
+        alert('perdu')
+        console.log(list)
+        niveau2=1
+        var s= document.createElement('button');
+            s.id='suite';
+            var texte=document.createTextNode('suite');
+            s.appendChild(texte);
+            document.body.appendChild(s);
+            suite.onclick=function() {
+    var button4= document.createElement('button');
+            button4.id='button4';
+            var texte=document.createTextNode('button4');
+            button4.appendChild(texte);
+            document.body.appendChild(button4);
+    var button5= document.createElement('button');
+            button5.id='button5';
+            var texte=document.createTextNode('button5');
+            button5.appendChild(texte);
+            document.body.appendChild(button5);
+    Main2();
+    var list2=[3,1,5,4,2];
+    var compteur2=0;
+    button1.onclick = function() {
+        list2[compteur2]=1;
+        compteur2++
+    }
+    button2.onclick = function() {
+        list2[compteur2]=2;
+        compteur2++
+    }
+    button3.onclick = function() {
+        list2[compteur2]=3;
+        compteur2++
+    }
+    button4.onclick = function() {
+        list2[compteur2]=4;
+        compteur2++
+    }
+    button5.onclick = function() {
+        list2[compteur2]=5;
+        compteur2++
+    }
+    var valider= document.createElement('button');
+            valider.id='valider';
+            var texte=document.createTextNode('valider');
+            valider.appendChild(texte);
+            document.body.appendChild(valider);
+    valider.onclick=function() {
+        if (list2==[3,1,5,4,2]) {
+            alert('bien joué vous avez réussi l etape 2')
+            niveau3=1;
+            newText("Ceci est le niveau ultime bonne chance","h22")
+            var button6= document.createElement('button');
+            button6.id='button6';
+            var texte=document.createTextNode('button6');
+            button6.appendChild(texte);
+            document.body.appendChild(button6);
+            var button7= document.createElement('button');
+            button7.id='button7';
+            var texte=document.createTextNode('button7');
+            button7.appendChild(texte);
+            document.body.appendChild(button7);
+            Main3();
+            var compteur3=0;
+            var list3=[0,0,0,0,0,0,0];
+            button1.onclick = function() {
+            list3[compteur3]=1;
+            compteur3++
+            }
+            button2.onclick = function() {
+                list3[compteur3]=2;
+                compteur3++
+            }
+            button3.onclick = function() {
+                list3[compteur3]=3;
+                compteur3++
+            }
+            button4.onclick = function() {
+                list3[compteur3]=4;
+                compteur3++
+            }
+            button5.onclick = function() {
+                list3[compteur3]=5;
+                compteur3++
+            }
+            button6.onclick = function() {
+                list3[compteur3]=6;
+                compteur3++
+            }
+            button7.onclick = function() {
+                list3[compteur3]=7;
+                compteur3++
+            }
+            if (list3==[3,5,5,2,7,6,1]) {
+                alert("bien joué vous aver gagné le resultat de la combinaison est 8")
+            }
+            else {
+                alert("vous avez definitivement perdu, vous etes condamné")
+            }
+                    
+
+
+        }
+        else {
+            alert('Ah Ah ah vous avez perdu, vous étes condamner')
+        }
+    }
+    
+    
+
+
+}
+    }
+}
+else {
+    var t=0;
+}
+    
+}
+button3.onclick=function() {
+    list[compteur]=3;
+    newText(list,"h2")
+    compteur=compteur+1;
+    console.log(compteur)
+    console.log(list)
+    
+}
+
+
+
+
+ 
+
+
+
+</script>
+
+    
+</body>
+</html>
