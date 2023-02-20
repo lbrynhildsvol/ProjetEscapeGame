@@ -33,6 +33,7 @@ async function newText(textContent,id) {
                 }
             }
 
+
 newText("Trouves les bons carrés","titre");
 async function Start(button) {
     button.style.background = "rgb(100,100,100)";
@@ -48,6 +49,12 @@ async function Main() {
             Start(document.getElementById("button2"));
             await sleep(500);
         }
+async function bouttonckick(id) {
+    id.style.background="rgb(255,0,255)"
+    await sleep(100);
+    id.style.background="white"
+
+}
         async function Main2() {
             await sleep(1000);
             Start(document.getElementById("button3"));
@@ -84,6 +91,7 @@ var list=[0,0,0];
 var compteur=0;
 var h=0;
 button1.onclick=function() {
+    bouttonckick(button1)
     list[compteur]=1;
     compteur=compteur+1;
     console.log(compteur)
@@ -94,6 +102,7 @@ button1.onclick=function() {
  
 }
 button3.onclick=function() {
+    bouttonckick(button3)
     list[compteur]=3;
     compteur=compteur+1;
     console.log(compteur)
@@ -103,6 +112,7 @@ button3.onclick=function() {
     }
 }
 button2.onclick=function() {
+    bouttonckick(button2)
     list[compteur]=2;
     compteur=compteur+1;
     console.log(compteur)
@@ -152,6 +162,7 @@ button2.onclick=function() {
     var list2=[0,0,0,0,0];
     var compteur2=0;
     button1.onclick = function() {
+        bouttonckick(button1)
         list2[compteur2]=1;
         compteur2++
         console.log(list2)
@@ -160,6 +171,7 @@ button2.onclick=function() {
         }
     }
     button3.onclick = function() {
+        bouttonckick(button3)
         list2[compteur2]=3;
         compteur2++
         console.log(list2)
@@ -168,6 +180,7 @@ button2.onclick=function() {
         }
     }
     button4.onclick = function() {
+        bouttonckick(button4)
         list2[compteur2]=4;
         compteur2++
         console.log(list2)
@@ -177,6 +190,7 @@ button2.onclick=function() {
 
     }
     button5.onclick = function() {
+        bouttonckick(button5)
         list2[compteur2]=5;
         compteur2++
         console.log(list2)
@@ -185,6 +199,7 @@ button2.onclick=function() {
         }
     }
     button2.onclick = function() {
+        bouttonckick(button2)
         list2[compteur2]=2;
         compteur2++
         console.log(list2)
@@ -222,6 +237,7 @@ button2.onclick=function() {
             document.body.appendChild(valider);
     valider.onclick=function() {
 
+
         
             alert('bien joué vous avez réussi l etape 2')
             niveau3=1;
@@ -243,28 +259,35 @@ button2.onclick=function() {
             button2.onclick = function() {
                 list3[compteur3]=2;
                 compteur3++
+                bouttonckick(button2)
             }
             button3.onclick = function() {
                 list3[compteur3]=3;
                 compteur3++
+                bouttonckick(button3)
             }
             button4.onclick = function() {
                 list3[compteur3]=4;
                 compteur3++
+                bouttonckick(button4)
             }
             button5.onclick = function() {
                 list3[compteur3]=5;
                 compteur3++
+                bouttonckick(button5)
             }
             button6.onclick = function() {
                 list3[compteur3]=6;
                 compteur3++
+                bouttonckick(button6)
             }
             button7.onclick = function() {
+                bouttonckick(button7)
                 list3[compteur3]=7;
                 compteur3++
             }
             button1.onclick = function() {
+                bouttonckick(button1)
             list3[compteur3]=1;
             compteur3++
             if (compteur3==7) {
@@ -291,7 +314,12 @@ button2.onclick=function() {
 
             }
             if (cp3==7) {
-                alert("bravo vous avez définitivement gagner le chiffre code de la deuxiéme combinaison est de 2")
+                alert("bravo vous avez définitivement gagner le chiffre code de la deuxiéme combinaison est de 2 alors retener le")
+                var mission3= document.createElement('button');
+                mission.id='mission3';
+                var texte=document.createTextNode('mission3');
+                mission3.appendChild(texte);
+                document.body.appendChild(mission3);
                 }
             else {
                 alert("vous avez perdu à la derniére étape dommage perdu")
