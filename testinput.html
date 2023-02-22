@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let dialogbox = document.createElement("div");
+        dialogbox.id = "dialog";
+        document.body.appendChild(dialogbox);
+
+        // nouveau dialogue
+        function newDialog() {
+            dialogbox.remove();
+            dialogbox = document.createElement("div");
+            dialogbox.id = "dialog";
+            document.body.appendChild(dialogbox);
+        }
+        function newInput(placeHolder) {
+            var input = document.createElement("input");
+            input.placeholder = placeHolder;
+            input.id = "dialog-input";
+            dialogbox.appendChild(input);
+            return input
+        }
+        var a = newInput("saisir");
+        a.onkeydown = async (event) => {
+        if (event.key == "Enter") {
+
+            a.disabled = true;
+            if (a.value == "") a.value = a.placeholder;
+        }
+    }
+
+
+
+    </script>
+</body>
+
+</html>
