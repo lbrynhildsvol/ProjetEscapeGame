@@ -23,6 +23,7 @@
                 dialogbox.id = "dialog";
                 document.body.appendChild(dialogbox);
             }
+            /*fonction qui crée une case de saisie*/
             function newInput(placeHolder) {
                 var input = document.createElement("input");
                 input.placeholder = placeHolder;
@@ -44,7 +45,7 @@
 
 
         
-           
+           //on crée une list qui sera crée en fonction des numéro taper dans chacun des input
             var listcode=[0,0,0,0,0,0];
             var a=0;
             var code1 = newInput("saisir");
@@ -107,6 +108,7 @@
                             
                         }
                     }
+                    //on crée un boutton valider
                     var valider = document.createElement('button');
                                             valider.id = 'valider';
                                             var texte = document.createTextNode('valider');
@@ -114,10 +116,11 @@
                                             document.body.appendChild(valider);
                     valider.onclick= function() {
                         var a=0;
-                        var listf=[2,4,3,5,9,7]
+                        var listf=[2,4,3,5,9,9];
                         var b=0;
                         var reussite=0;
                         var sature=0;
+                        // on compare les deux listes crée, si elle sont pareil on dit que le jeoueur a gagner le jeu sinon qu'il la perdu
                         while (sature != 6) {
                             a=listcode[sature]
                             b=listf[sature]
@@ -134,7 +137,7 @@
                                         }
                                         sature = sature + 1
                                         if (reussite==6) {
-                                            alert("Vous avez gagner ce jeu, bien joué")
+                                            alert("Vous avez gagner le jeu")
                                         }
                                         
                                     }
