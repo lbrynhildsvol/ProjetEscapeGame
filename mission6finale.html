@@ -100,7 +100,7 @@
                     if (event.key == "Enter") {
 
                         rps.disabled = true;
-                        if (rps == '6') {
+                        if (rps.value == '6') {
                             alert('vous avez gagné')
                         }
                         else {
@@ -111,8 +111,16 @@
                                 if (event.key == "Enter") {
 
                                     rps2.disabled = true;
-                                    if (rps2 == '6') {
-                                        alert('vous avez gagné')
+                                    if (rps2.value == '6') {
+                                        alert('vous avez gagné, le chiffre de la derniére combinaison est 7, retenez le ')
+                                        var missionf = document.createElement('button');
+                                                        missionf.id = 'missionf';
+                                                        var texte = document.createTextNode('mission finale');
+                                                        missionf.appendChild(texte);
+                                                        document.body.appendChild(missionf);
+                                                        missionf.onclick=function() {
+                                                            /*je te laisse mettre le lien de la mission suivante*/
+                                                        }
                                     }
 
                                     else {

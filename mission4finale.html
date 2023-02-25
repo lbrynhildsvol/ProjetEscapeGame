@@ -72,7 +72,7 @@
 
 
 
-           
+
             var a = 0;
 
             function sleep(ms) {
@@ -88,7 +88,7 @@
             }
             newText("Le chiffre dissimulé a la quatriéme combinaisons du code est caché derriére une suite de nombre transformé en binaire"
                 , "titre");
-                /*à chaque fois que l'on appuis sur compris on explique un peu plus pour ne pas innonder le joueur d'information*/
+            /*à chaque fois que l'on appuis sur compris on explique un peu plus pour ne pas innonder le joueur d'information*/
             button1.onclick = async () => {
                 a = a + 1;
                 if (a == 1) {
@@ -113,7 +113,7 @@
                             }
                             else {
                                 rps.remove();
-                                newText('perdu il vous reste un essaie , dommage','hf2')
+                                newText('perdu il vous reste un essaie , dommage', 'hf2')
                                 var rps2 = newInput("saisir");
                                 rps2.onkeydown = async (event) => {
                                     if (event.key == "Enter") {
@@ -121,6 +121,14 @@
                                         rps2.disabled = true;
                                         if (rps2.value == '2') {
                                             message('Bien joué vous avez réussi, vous avez la quatriéme combinaison du code retenez la,c est 3')
+                                            var mission5 = document.createElement('button');
+                                            mission5.id = 'mission5';
+                                            var texte = document.createTextNode('mission5');
+                                            mission5.appendChild(texte);
+                                            document.body.appendChild(mission5);
+                                            mission5.onclick = function () {
+                                                /*je te laisse mettre le lien de la mission suivante*/
+                                            }
                                         }
                                         else {
                                             message('Vous avez definitivement perdu , dommage')
@@ -137,7 +145,16 @@
 
                                     rps.disabled = true;
                                     if (rps.value == '2') {
-                                        message('Bien joué vous avez réussi, vous avez la quatriéme combinaison du code retenez la')
+                                        message('Bien joué vous avez réussi, vous avez la quatriéme combinaison du code retenez la,c est 3')
+                                        var mission5 = document.createElement('button');
+                                        mission5.id = 'mission5';
+                                        var texte = document.createTextNode('mission5');
+                                        mission5.appendChild(texte);
+                                        document.body.appendChild(mission5);
+                                        mission5.onclick = function () {
+                                            /*je te laisse mettre le lien de la mission suivante*/
+                                        }
+
                                     }
                                     else {
                                         message('Vous avez définitivement perdu, dommage')
@@ -152,7 +169,7 @@
             }
         }
 
-                mission4();
+        mission4();
 
 
 
